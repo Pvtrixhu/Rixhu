@@ -1,4 +1,3 @@
-
 local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 local Lighting = game:GetService("Lighting")
@@ -82,8 +81,8 @@ local container = Instance.new("Frame", ScreenGui)
 container.BackgroundTransparency = 1
 container.Size = UDim2.new(1, 0, 1, 0)
 
-local asset1 = "rbxassetid://128065570168183"
-local asset2 = "rbxassetid://116841022210481"
+local asset1 = "rbxassetid://94245384829041"
+local asset2 = "rbxassetid://100554698694610"
 
 local function createAssetButton(imageId)
 	local btn = Instance.new("ImageButton")
@@ -243,7 +242,7 @@ G2L["4"]["CornerRadius"] = UDim.new(0, 4)
 G2L["5"] = Instance.new("ImageLabel", G2L["2"])
 G2L["5"]["BorderSizePixel"] = 0
 G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-G2L["5"]["Image"] = [[rbxassetid://81035835966463]]
+G2L["5"]["Image"] = [[rbxassetid://106628123920796]]
 G2L["5"]["Size"] = UDim2.new(0, 316, 0, 128)
 G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 G2L["5"]["LayoutOrder"] = -6
@@ -347,7 +346,7 @@ G2L["17"] = Instance.new("TextLabel", G2L["15"])
 G2L["17"]["Name"] = "Tick"
 G2L["17"]["Size"] = UDim2.new(1, 0, 1, 0)
 G2L["17"]["BackgroundTransparency"] = 1
-G2L["17"]["Text"] = "🩸"
+G2L["17"]["Text"] = "🦴"
 G2L["17"]["TextColor3"] = Color3.fromRGB(0, 255, 0)
 G2L["17"]["TextTransparency"] = 1 -- Start hidden
 G2L["17"]["Font"] = Enum.Font.SourceSansBold
@@ -553,7 +552,7 @@ local function C_14()
     -- Find the special ImageLabel
     local specialImage
     for _, child in ipairs(main:GetDescendants()) do
-        if child:IsA("ImageLabel") and child.Image == "rbxassetid://81035835966463" then
+        if child:IsA("ImageLabel") and child.Image == "rbxassetid://106628123920796" then
             specialImage = child
             break
         end
@@ -759,7 +758,7 @@ G2L["4"]["CornerRadius"] = UDim.new(0, 4)
 G2L["5"] = Instance.new("ImageLabel", G2L["2"])
 G2L["5"]["BorderSizePixel"] = 0
 G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-G2L["5"]["Image"] = [[rbxassetid://103434281255283]]
+G2L["5"]["Image"] = [[rbxassetid://135939092946233]]
 G2L["5"]["Size"] = UDim2.new(0, 316, 0, 128)
 G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 G2L["5"]["LayoutOrder"] = -6
@@ -1069,7 +1068,7 @@ local function C_14()
     -- Find the special ImageLabel
     local specialImage
     for _, child in ipairs(main:GetDescendants()) do
-        if child:IsA("ImageLabel") and child.Image == "rbxassetid://103434281255283" then
+        if child:IsA("ImageLabel") and child.Image == "rbxassetid://135939092946233" then
             specialImage = child
             break
         end
