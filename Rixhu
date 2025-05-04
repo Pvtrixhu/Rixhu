@@ -1,1 +1,67 @@
+local musicList = {
+    {Name = "Rock Theme", ID = "142376088"}, -- example IDs
+    {Name = "Chill Vibes", ID = "1839461251"},
+    {Name = "Meme Song", ID = "130776150"},
+    {Name = "Nightcore", ID = "2934660483"},
+}
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+gui.Name = "MusicSelector"
+gui.ResetOnSpawn = false
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 300, 0, 250)
+frame.Position = UDim2.new(0.5, -150, 0.5, -125)
+frame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.Text = "🎵 Music Injector"
+title.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextScaled = true
+
+local UIListLayout = Instance.new("UIListLayout", frame)
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 6)
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Top
+UIListLayout.Padding = UDim.new(0, 4)
+
+UIListLayout.Parent = frame
+title.LayoutOrder = 0
+
+-- Function to inject music ID into a textbox in Brookhaven
+local function tryInjectMusicID(id)
+    local gui = player:FindFirstChild("PlayerGui")
+    if not gui then return end
+
+    for _, ui in pairs(gui:GetDescendants()) do
+        if ui:IsA("TextBox") and ui.PlaceholderText:lower():find("id") then
+            ui.Text = id
+            print("✅ Injected Music ID: " .. id)
+            return
+        end
+    end
+    warn("⚠️ Music textbox not found in Brookhaven.")
+end
+
+-- Create buttons for music options
+for i, music in ipairs(musicList) do
+    local button = Instance.new("TextButton", frame)
+    button.Size = UDim2.new(1, 0, 0, 30)
+    button.Text = music.Name .. " (" .. music.ID .. ")"
+    button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.TextScaled = true
+    button.LayoutOrder = i
+
+    button.MouseButton1Click:Connect(function()
+        tryInjectMusicID(music.ID)
+    end)
+end
 
